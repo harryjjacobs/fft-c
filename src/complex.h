@@ -23,4 +23,16 @@ Complex complex_add(Complex lhs, Complex rhs) {
   return c;
 }
 
+Complex complex_subtract(Complex lhs, Complex rhs) {
+  Complex c;
+  c.real = lhs.real - rhs.real;
+  c.imag = lhs.imag - rhs.imag;
+  return c;
+}
+
+Complex complex_negate(Complex c) {
+  Complex new_c = {.real = -c.real, .imag = -c.imag};
+  return new_c;
+}
+
 #endif

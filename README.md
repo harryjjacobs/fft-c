@@ -8,7 +8,7 @@
 ## Build
 
 ```bash
-make
+make dft fft
 ```
 
 ## Run
