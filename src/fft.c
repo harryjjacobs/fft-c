@@ -20,21 +20,6 @@ double calc_phase(const Complex *complex) {
   return atan2(complex->imag, complex->real);
 }
 
-void dft(Complex *in, Complex *out, unsigned int n) {
-  for (unsigned int k = 0; k < n; k++) {  // output element k
-    out[k].real = 0.0;
-    out[k].imag = 0.0;
-    for (unsigned int j = 0; j < n; j++) {  // input element j
-      // https://i.stack.imgur.com/j4l5B.png
-      double angle = -2.0 * PI * k * (double)j / n;
-      Complex e_term;
-      e_term.real = cos(angle);
-      e_term.imag = sin(angle);
-      out[k] = complex_add(out[k], complex_mult(in[j], e_term));
-    }
-  }
-}
-
 // https://en.wikipedia.org/wiki/Cooley%E2%80%93Tukey_FFT_algorithm#Pseudocode
 // Note to self as this seems to have just clicked in my head:
 // The time-saving in the FFT comes from the fact that we only need to calculate
