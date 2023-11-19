@@ -28,15 +28,6 @@ double calc_phase(const Complex *complex) {
 // X_k+N/2 without iteration of k further because a jump by a multiple of PI
 // means we are in the negative part of the "wave" that is symmetric to to the
 // positive part in 0..N/2
-//
-// 0, 1, 2, 1, 0, 1, 2, 1
-// n = 8, s = 1, in = 0
-// odd
-// n = 4, s = 2, in = 1
-// odd
-// n = 2, s = 4, in = 3 <- stop here: s >= n
-// odd
-// n = 1, s = 8, in = 11
 void fft(Complex *in, Complex *out, unsigned int n, unsigned int stride) {
   printf("stride %d, n %d\n", stride, n);
   if (n == 1) {
