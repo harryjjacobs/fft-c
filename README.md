@@ -15,6 +15,7 @@ make dft fft
 
 ```bash
 ./dft
+./fft
 ```
 
 ## Resources
